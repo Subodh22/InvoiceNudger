@@ -19,7 +19,7 @@ export async function GET() {
 
     // Send a test email
     const { data, error } = await resend.emails.send({
-      from: process.env.DEFAULT_FROM_EMAIL || 'invoices@invoicenudger.com',
+      from: process.env.DEFAULT_FROM_EMAIL || 'onboarding@resend.dev',
       to: 'test@example.com', // Replace with your actual test email
       subject: 'Test email from Invoice Nudger',
       html: '<p>This is a test email from Invoice Nudger to verify Resend integration.</p>',

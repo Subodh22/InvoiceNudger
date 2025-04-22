@@ -14,7 +14,7 @@ export async function GET(request: Request) {
     console.log('Using Resend API key starting with:', API_KEY.substring(0, 10) + '...');
     
     const { data, error } = await resend.emails.send({
-      from: 'Invoice Nudger <invoices@invoicenudger.com>',
+      from: 'Invoice Nudger <onboarding@resend.dev>',
       to: to,
       subject: 'Test Email from Invoice Nudger',
       html: `

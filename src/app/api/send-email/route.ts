@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: process.env.DEFAULT_FROM_EMAIL || 'invoices@invoicenudger.com',
+      from: process.env.DEFAULT_FROM_EMAIL || 'onboarding@resend.dev',
       to: email,
       subject: subject,
       text: message,

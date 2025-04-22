@@ -5,7 +5,7 @@ const resendApiKey = process.env.RESEND_API_KEY; // re_EjQzecri_2PuZqfuh85jxgxPT
 const resend = new Resend(resendApiKey);
 
 // Default sender email (customize as needed)
-const DEFAULT_FROM_EMAIL = process.env.DEFAULT_FROM_EMAIL || 'invoices@invoicenudger.com';
+const DEFAULT_FROM_EMAIL = process.env.DEFAULT_FROM_EMAIL || 'onboarding@resend.dev';
 
 export type EmailOptions = {
   to: string;
