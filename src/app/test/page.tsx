@@ -20,11 +20,10 @@ export default function TestPage() {
           
           <div className="space-y-2">
             <div>
-              <span className="font-medium">Resend API Key:</span>{' '}
-              <span className="font-mono">
-                {process.env.NEXT_PUBLIC_RESEND_API_KEY 
-                  ? `${process.env.NEXT_PUBLIC_RESEND_API_KEY.substring(0, 5)}...` 
-                  : 'Not available as public var (expected, using server-side)'}
+              <span className="font-medium">Resend API Key Status:</span>{' '}
+              <span className="text-green-600">
+                {/* Resend API key is server-side only */}
+                Using server-side API key (not exposed to client)
               </span>
             </div>
             

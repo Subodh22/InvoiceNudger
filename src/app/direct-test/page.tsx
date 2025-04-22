@@ -22,11 +22,11 @@ export default function DirectTestPage() {
       
       // Use the direct test API endpoint
       const apiUrl = `/api/test-send?to=${encodeURIComponent(email)}`;
-      const response = await fetch(apiUrl);
-      const data = await response.json();
+      const res = await fetch(apiUrl);
+      const data = await res.json();
       
       setResponse(data);
-      setStatus(response.ok ? 'success' : 'error');
+      setStatus(res.ok ? 'success' : 'error');
     } catch (error) {
       setStatus('error');
       setResponse({ error: (error as Error).message });
@@ -80,8 +80,8 @@ export default function DirectTestPage() {
         )}
         
         <div className="mt-4 text-center">
-          <Link href="/dashboard" className="text-blue-600 hover:text-blue-800 text-sm">
-            Back to Dashboard
+          <Link href="/" className="text-blue-600 hover:text-blue-800 text-sm">
+            Back to Home
           </Link>
         </div>
       </div>

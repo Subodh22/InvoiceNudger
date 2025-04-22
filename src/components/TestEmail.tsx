@@ -27,9 +27,14 @@ export default function TestEmail() {
           to: email,
           subject: 'Test Email from Invoice Nudger',
           html: `
-            <h1>This is a test email from Invoice Nudger</h1>
-            <p>If you're seeing this, the Resend integration is working correctly!</p>
-            <p>This email was sent using the Resend API with key: re_Ej...CU</p>
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eaeaea; border-radius: 5px;">
+              <h1 style="color: #333; font-size: 24px;">This is a test email from Invoice Nudger</h1>
+              <p style="color: #666; font-size: 16px;">If you're seeing this, the Resend integration is working correctly!</p>
+              <p style="color: #666; font-size: 16px;">This email was sent at: ${new Date().toLocaleString()}</p>
+              <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eaeaea; text-align: center; color: #999; font-size: 14px;">
+                Sent via Resend
+              </div>
+            </div>
           `,
         }),
       });
@@ -37,7 +42,8 @@ export default function TestEmail() {
       const data = await response.json();
       
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to send test email');
+        const errorMessage = data.error || data.details || 'Failed to send test email';
+        throw new Error(errorMessage);
       }
       
       setStatus('success');
